@@ -1,0 +1,29 @@
+<p>serie-list works!</p>
+<div class="container">
+  <h2>Lista de Series</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Canal</th>
+        <th>Temporadas</th>
+        <th>Descripción</th>
+        <th>Webpage</th>
+        <th>Poster</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Usamos *ngFor para iterar sobre las series y crear una fila para cada serie -->
+      <tr *ngFor="let s of series">
+        <td>{{ s.id }}</td>  <!-- Interpolación para mostrar el id de la serie -->
+        <td>{{ s.name }}</td>  <!-- Interpolación para mostrar el nombre de la serie -->
+        <td>{{ s.channel }}</td>  <!-- Interpolación para mostrar el canal de la serie -->
+        <td>{{ s.seasons }}</td>  <!-- Interpolación para mostrar las temporadas -->
+        <td>{{ s.description }}</td>  <!-- Interpolación para mostrar la descripción -->
+        <td><a [href]="s.webpage" target="_blank">Ver más</a></td>  <!-- Binding de propiedad para el enlace -->
+        <td><img [src]="s.poster" alt="{{ s.name }} Poster" class="img-thumbnail" width="100"></td>  <!-- Binding de propiedad para el poster -->
+      </tr>
+    </tbody>
+  </table>
+</div>
